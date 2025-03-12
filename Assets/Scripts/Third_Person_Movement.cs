@@ -12,6 +12,11 @@ public class Third_Person_Movement : MonoBehaviour
 
     float turnSmoothVelocity; // Velocity for turning
 
+    void Start()
+    {
+        //Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center of the screen
+    }
+
     // Update is called once per frame
     void Update()
     {

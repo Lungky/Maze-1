@@ -15,7 +15,8 @@ public class Game_Manager : MonoBehaviour
     public void CompleteLevel() // Called when the level is completed
     {
         Debug.Log("Level Complete");
-        completeLevelUI.SetActive(true); // Activate the level complete UI
+        //completeLevelUI.SetActive(true); // Activate the level complete UI
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Load the next scene in the build order
     }
 
     public void EndGame() // Called when the game ends
