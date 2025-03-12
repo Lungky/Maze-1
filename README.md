@@ -1,2 +1,3 @@
 # Maze-1
- Lab Homework 1 - Unity
+First Assignment - Unity
+Computer Graphics and Animation Lab, NTUST
