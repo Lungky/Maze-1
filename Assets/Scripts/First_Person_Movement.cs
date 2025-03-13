@@ -5,13 +5,6 @@ public class First_Person_Movement : MonoBehaviour
     public CharacterController controller; // Reference to the CharacterController component
     public float speed = 6f; // Movement speed
     
-    //public Third_Person_Movement thirdPersonMovement; // Reference to the Third_Person_Movement script
-
-    //void Start()
-    //{
-    //    thirdPersonMovement.enabled = false; // Disable the Third_Person_Movement script
-    //}
-
     // Update is called once per frame
     void Update()
     {

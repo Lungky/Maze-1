@@ -17,7 +17,7 @@ public class Switch_Camera : MonoBehaviour
     void Update()
     {
         // Listen for the "C" key press.
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.V))
         {
             ManageCamera(); // Call the ManageCamera function
         }
