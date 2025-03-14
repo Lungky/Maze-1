@@ -17,12 +17,16 @@ public class Maze_Cell : MonoBehaviour
     [SerializeField]
     private GameObject _unvisitedBlock;
 
+    [SerializeField]
+    private GameObject _topWall;
+
     public bool IsVisited { get; private set; } // This property is used to get the value of IsVisited and set it only in this class
 
     public void Visit() // This method is used to set the value of IsVisited to true and deactivate the unvisited block
     {
         IsVisited = true;
         _unvisitedBlock.SetActive(false);
+        _topWall.SetActive(true);
     }
 
     public void ClearLeftWall() // This method is used to deactivate the left wall

@@ -1,16 +1,25 @@
 using UnityEngine;
 
-public class Skybox_Light_Sync : MonoBehaviour
+public class SkyboxLightSync : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    // Reference to your day/night directional light.
+    public Light dayNightLight;
 
-    // Update is called once per frame
+    // Base exposure value for the skybox (set this to your desired baseline)
+    public float baseExposure = 1f;
+
+    // Optional multiplier for fine tuning the effect.
+    public float intensityMultiplier = 1f;
+
     void Update()
     {
-        
+        // Calculate a new exposure based on the light's intensity.
+        float newExposure = baseExposure + dayNightLight.intensity * intensityMultiplier;
+
+        // Apply the new exposure to the skybox material.
+        RenderSettings.skybox.SetFloat("_Exposure", newExposure);
+
+        // (Optional) Update the environment lighting immediately.
+        DynamicGI.UpdateEnvironment();
     }
 }
