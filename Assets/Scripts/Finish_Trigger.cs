@@ -8,5 +8,8 @@ public class Finish_Trigger : MonoBehaviour
     {
         timer.TimerStop(); // Call the TimerStop method from the Timer script
         gameManager.CompleteLevel(); // Call the CompleteLevel method from the GameManager script
+
+        Cursor.lockState = CursorLockMode.None; // Lock the cursor to the center
+        Cursor.visible = true;                   // Hide the cursor
     }
 }
