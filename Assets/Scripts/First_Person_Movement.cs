@@ -4,6 +4,7 @@ public class First_Person_Movement : MonoBehaviour
 {
     public CharacterController controller; // Reference to the CharacterController component
     public float speed = 6f; // Movement speed
+    public ParticleSystem dust; // Reference to the ParticleSystem component
 
     void Start()
     {
@@ -19,5 +20,12 @@ public class First_Person_Movement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z; // Calculate the movement vector
 
         controller.Move(move * speed * Time.deltaTime); // Move the player
+
+        CreateDust(); // Create dust particles
+    }
+
+    void CreateDust() // This method is used to create dust particles
+    {
+        dust.Play(); // Play the dust particles
     }
 }

@@ -12,6 +12,8 @@ public class Third_Person_Movement : MonoBehaviour
 
     float turnSmoothVelocity; // Velocity for turning
 
+    public ParticleSystem dust; // Reference to the ParticleSystem component
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center
@@ -36,11 +38,17 @@ public class Third_Person_Movement : MonoBehaviour
 
             // Set the animator parameter to trigger the idle -> moving transition
             animator.SetBool("IsMoving", true);
+
+            CreateDust(); // Create dust particles
         }
         else
         {
             // Set the animator parameter to trigger the moving -> idle transition
             animator.SetBool("IsMoving", false);
         }
+    }
+    void CreateDust() // This method is used to create dust particles
+    {
+        dust.Play(); // Play the dust particles
     }
 }
