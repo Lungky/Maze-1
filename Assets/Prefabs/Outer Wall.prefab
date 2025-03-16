@@ -429,7 +429,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6213260384884622543}
-  - component: {fileID: 8548934295603183961}
   m_Layer: 0
   m_Name: Outer Wall
   m_TagString: Untagged
@@ -456,23 +455,6 @@ Transform:
   - {fileID: 863677511184690474}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8548934295603183961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6135939815716893779}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bc4550a0545e414b83d4282b1df01e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _leftWall: {fileID: 22113184224435048}
-  _rightWall: {fileID: 2591759563586519701}
-  _frontwall: {fileID: 2782969744297146519}
-  _backWall: {fileID: 7370289905550191826}
-  _unvisitedBlock: {fileID: 0}
 --- !u!1 &7204034014665948650
 GameObject:
   m_ObjectHideFlags: 0
