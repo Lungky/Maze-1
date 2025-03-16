@@ -12,6 +12,6 @@ public class Minimap_Script : MonoBehaviour
         transform.position = newPosition;
 
         // Set a fixed rotation (90° downwards) so the camera doesn't follow the player's rotation.
-        transform.rotation = Quaternion.Euler(90f, 0f, 0f);
+        transform.rotation = Quaternion.Euler(90f, 270f, 0f);
     }
 }
