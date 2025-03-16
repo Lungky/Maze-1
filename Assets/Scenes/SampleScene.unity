@@ -7024,7 +7024,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 375
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 0bfdf8565e5f2b740a1fd5911f59042c, type: 2}
   m_TargetDisplay: 0
@@ -12218,6 +12218,7 @@ MonoBehaviour:
   controller: {fileID: 1174236233}
   speed: 6
   dust: {fileID: 1125046562}
+  spriteRenderer: {fileID: 856514758}
 --- !u!114 &1174236237
 MonoBehaviour:
   m_ObjectHideFlags: 0

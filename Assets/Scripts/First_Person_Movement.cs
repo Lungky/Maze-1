@@ -6,6 +6,8 @@ public class First_Person_Movement : MonoBehaviour
     public float speed = 6f; // Movement speed
     public ParticleSystem dust; // Reference to the ParticleSystem component
 
+    public SpriteRenderer spriteRenderer;
+
     void Update()
     {
         float x = Input.GetAxis("Horizontal"); // Get the horizontal input
@@ -24,6 +26,12 @@ public class First_Person_Movement : MonoBehaviour
         else if (dust.isPlaying)
         {
             dust.Stop();
+        }
+
+        // Ensure the spriteRenderer is not null and enable it
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled = true;
         }
     }
 
