@@ -1,18 +1,17 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Third_Person_Movement : MonoBehaviour
 {
     public CharacterController controller; // Reference to the CharacterController component
-    public Animator animator;  // Reference to the Animator component
-    public Transform cam;      // Camera transform
+    public Animator animator;              // Reference to the Animator component
+    public Transform cam;                  // Camera transform
 
-    public float speed = 3f;           // Movement speed
-    public float turnSmoothTime = 0.1f;  // Smooth time for turning
+    public float speed = 3f;               // Movement speed
+    public float turnSmoothTime = 0.1f;      // Smooth time for turning
 
-    float turnSmoothVelocity; // Velocity for turning
+    float turnSmoothVelocity;              // Velocity for turning
 
-    public ParticleSystem dust; // Reference to the ParticleSystem component
+    public ParticleSystem dust;            // Reference to the ParticleSystem component
 
     void Start()
     {
@@ -36,19 +35,31 @@ public class Third_Person_Movement : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
 
-            // Set the animator parameter to trigger the idle -> moving transition
+            // Trigger the idle -> moving transition in the animator.
             animator.SetBool("IsMoving", true);
 
-            CreateDust(); // Create dust particles
+            // Play dust particles only if not already playing.
+            CreateDust();
         }
         else
         {
-            // Set the animator parameter to trigger the moving -> idle transition
+            // Trigger the moving -> idle transition in the animator.
             animator.SetBool("IsMoving", false);
+
+            // Stop dust particles if they are playing.
+            if (dust.isPlaying)
+            {
+                dust.Stop();
+            }
         }
     }
-    void CreateDust() // This method is used to create dust particles
+
+    // This method plays dust particles if they are not already playing.
+    void CreateDust()
     {
-        dust.Play(); // Play the dust particles
+        if (!dust.isPlaying)
+        {
+            dust.Play();
+        }
     }
 }

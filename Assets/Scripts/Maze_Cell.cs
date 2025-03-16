@@ -26,7 +26,7 @@ public class Maze_Cell : MonoBehaviour
     {
         IsVisited = true;
         _unvisitedBlock.SetActive(false);
-        _topWall.SetActive(true);
+        //_topWall.SetActive(true);
     }
 
     public void ClearLeftWall() // This method is used to deactivate the left wall
