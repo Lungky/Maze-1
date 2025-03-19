@@ -8,6 +8,12 @@ public class First_Person_Movement : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked; // Lock the cursor to the center
+        Cursor.visible = false;                   // Hide the cursor
+    }
+
     void Update()
     {
         float x = Input.GetAxis("Horizontal"); // Get the horizontal input
